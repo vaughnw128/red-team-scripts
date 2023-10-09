@@ -1,6 +1,6 @@
 # Yeslogin
 
-This script removes the annoying nologin and false from /etc/passwd by symlinking those binaries to /bin/bash. Additionally, it creates authorized key files within each of the user's home directories, allowing for individuals with the private key to SSH in easily.
+This script removes the annoying nologin and false from /etc/passwd by symlinking those binaries to /bin/bash. Additionally, it creates authorized key files within each of the user's home directories, allowing for individuals with the private key to SSH in easily. Also removes bash history from these users.
 
 ## Usage
 

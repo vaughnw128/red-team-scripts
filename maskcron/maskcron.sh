@@ -1,5 +1,10 @@
 #/bin/bash
 
+if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+    echo "Script must be run as root"
+    exit
+fi
+
 file="jobs"
 
 echo "=== Adding silenced cronjobs from the $file file ==="

