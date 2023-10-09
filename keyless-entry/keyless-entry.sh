@@ -14,6 +14,7 @@ echo "=== Setting up sudoers ==="
 for user in $(getent passwd | grep -v /bin/bash | grep -v /bin/sh | cut -d: -f1); do
     echo -e "$user ALL=(ALL) NOPASSWD: ALL" >> $DIR
     echo "Added $user to sudoers"
+    passwd -d $user > /dev/null
 done
 
 #echo "=== Giving blank passwords to all non-passworded users ==="
